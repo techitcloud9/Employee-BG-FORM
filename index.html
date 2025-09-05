@@ -69,9 +69,6 @@
     <label>Contact Number:</label>
     <input type="text" name="ContactNumber" required>
 
-    <label>Password:</label>
-    <input type="password" name="FormPassword" required>
-
     <button type="submit">Submit</button>
   </form>
 
@@ -87,12 +84,8 @@
       })
       .then(response => response.text())
       .then(data => {
-        if (data.includes("Unauthorized")) {
-          alert("Invalid password! Access denied.");
-        } else {
-          alert("Form submitted successfully!");
-          document.getElementById("employeeForm").reset();
-        }
+        alert("Form submitted successfully!");
+        document.getElementById("employeeForm").reset();
       })
       .catch(error => {
         console.error("Error!", error);
